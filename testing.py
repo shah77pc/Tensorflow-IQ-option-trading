@@ -111,7 +111,7 @@ SEQ_LEN = 8
 FUTURE_PERIOD_PREDICT = 1 
 
 # train_data()
-# model = tf.keras.models.load_model(R"C:\Users\Advice\Downloads\binary-bot-master\savemodel\asd.h5")
+# model = tf.keras.models.load_model(R"/kaggle/working/iqoptionapi/Tensorflow-IQ-option-trading/Tensorflow-IQ-option-trading/savemodel/asd.h5")
 iq = login()
 i = 1
 startM = 120
@@ -130,13 +130,13 @@ while(1):
     
     # if i%2 == 0:
     #     train_data()
-    #     model = tf.keras.models.load_model(R"C:\Users\Advice\Downloads\binary-bot-master\savemodel\asd.h5")
+    #     model = tf.keras.models.load_model(R"/kaggle/working/iqoptionapi/Tensorflow-IQ-option-trading/Tensorflow-IQ-option-trading/savemodel/asd.h5")
     #     i = i + 1 
     #     print('bet_money = ',bet_money)
     try: 
-        if datetime.datetime.now().second == 0 and os.path.exists(R'C:\Users\Advice\Desktop\jkl\binary-bot-master\asd1.h5'): 
+        if datetime.datetime.now().second == 0 and os.path.exists(R'/kaggle/working/iqoptionapi/Tensorflow-IQ-option-trading/Tensorflow-IQ-option-trading/savemodel/asd.h5'): 
             time_taker = time.time()
-            model = tf.keras.models.load_model(R'C:\Users\Advice\Desktop\jkl\binary-bot-master\asd1.h5')
+            model = tf.keras.models.load_model(R'/kaggle/working/iqoptionapi/Tensorflow-IQ-option-trading/Tensorflow-IQ-option-trading/savemodel/asd.h5')
             pred_ready = preprocess_prediciton(iq)             
             pred_ready = pred_ready.reshape(1,SEQ_LEN,pred_ready.shape[3])      
             result = model.predict(pred_ready)
