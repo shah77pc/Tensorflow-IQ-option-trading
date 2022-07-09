@@ -216,7 +216,7 @@ def train_data():
         metrics=['accuracy']
     )
     
-    checkpoint = ModelCheckpoint(R"C:\Users\Advice\Desktop\jkl\binary-bot-master\savemodel\asd.h5", monitor='val_accuracy', verbose=1, save_best_only=True, mode='max') # saves only the best ones
+    checkpoint = ModelCheckpoint(R"/kaggle/working/iqoptionapi/Tensorflow-IQ-option-trading/Tensorflow-IQ-option-trading/savemodel/asd.h5", monitor='val_accuracy', verbose=1, save_best_only=True, mode='max') # saves only the best ones
     
     # Train model
     history = model.fit(
@@ -235,20 +235,20 @@ while True:
   if datetime.datetime.now().second == 0:
     os.system('cls')
     X = train_data()
-    model = tf.keras.models.load_model(R"C:\Users\Advice\Desktop\jkl\binary-bot-master\savemodel\asd.h5")
+    model = tf.keras.models.load_model(R"/kaggle/working/iqoptionapi/Tensorflow-IQ-option-trading/Tensorflow-IQ-option-trading/savemodel/asd.h5")
     score = model.evaluate(X[0],X[1], verbose=0)
     print(f'Test loss: {score[0]} / Test accuracy: {score[1]}')
-    model1 = tf.keras.models.load_model(R"C:\Users\Advice\Desktop\jkl\binary-bot-master\asd.h5")
+    model1 = tf.keras.models.load_model(R"/kaggle/working/iqoptionapi/Tensorflow-IQ-option-trading/Tensorflow-IQ-option-trading/savemodel/asd.h5")
     score1 = model1.evaluate(X[0],X[1], verbose=0)
     print(f'Test loss: {score1[0]} / Test accuracy: {score1[1]}')  
     if score[1] > 0.6:
-      model.save(R'C:\Users\Advice\Desktop\jkl\binary-bot-master\asd.h5')
-      model.save(R'C:\Users\Advice\Desktop\jkl\binary-bot-master\asd1.h5')
+      model.save(R'/kaggle/working/iqoptionapi/Tensorflow-IQ-option-trading/Tensorflow-IQ-option-trading/savemodel/asd.h5')
+      model.save(R'/kaggle/working/iqoptionapi/Tensorflow-IQ-option-trading/Tensorflow-IQ-option-trading/savemodel/asd.h5')
     elif score1[1] > 0.6:
-      model1.save(R'C:\Users\Advice\Desktop\jkl\binary-bot-master\asd.h5')
-      model1.save(R'C:\Users\Advice\Desktop\jkl\binary-bot-master\asd1.h5')
-    elif score[1] < 0.6 and score1[1] < 0.6 and os.path.exists(R'C:\Users\Advice\Desktop\jkl\binary-bot-master\asd1.h5'):
-      os.remove(R'C:\Users\Advice\Desktop\jkl\binary-bot-master\asd1.h5')
+      model1.save(R'/kaggle/working/iqoptionapi/Tensorflow-IQ-option-trading/Tensorflow-IQ-option-trading/savemodel/asd.h5')
+      model1.save(R'/kaggle/working/iqoptionapi/Tensorflow-IQ-option-trading/Tensorflow-IQ-option-trading/savemodel/asd.h5')
+    elif score[1] < 0.6 and score1[1] < 0.6 and os.path.exists(R'/kaggle/working/iqoptionapi/Tensorflow-IQ-option-trading/Tensorflow-IQ-option-trading/savemodel/asd.h5'):
+      os.remove(R'/kaggle/working/iqoptionapi/Tensorflow-IQ-option-trading/Tensorflow-IQ-option-trading/savemodel/asd.h5')
     i = i + 1
     print('round = ',i)
 
