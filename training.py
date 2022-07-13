@@ -243,12 +243,12 @@ while True:
     print(f'Test loss: {score1[0]} / Test accuracy: {score1[1]}')  
     if score[1] > 0.6:
       model.save(R'/kaggle/working/iqoptionapi/Tensorflow-IQ-option-trading/Tensorflow-IQ-option-trading/savemodel/asd.h5')
-      model.save(R'/kaggle/working/iqoptionapi/Tensorflow-IQ-option-trading/Tensorflow-IQ-option-trading/savemodel/asd.h5')
+      model.save(R'/kaggle/working/iqoptionapi/Tensorflow-IQ-option-trading/Tensorflow-IQ-option-trading/savemodel/asd1.h5')
     elif score1[1] > 0.6:
       model1.save(R'/kaggle/working/iqoptionapi/Tensorflow-IQ-option-trading/Tensorflow-IQ-option-trading/savemodel/asd.h5')
-      model1.save(R'/kaggle/working/iqoptionapi/Tensorflow-IQ-option-trading/Tensorflow-IQ-option-trading/savemodel/asd.h5')
-    elif score[1] < 0.6 and score1[1] < 0.6 and os.path.exists(R'/kaggle/working/iqoptionapi/Tensorflow-IQ-option-trading/Tensorflow-IQ-option-trading/savemodel/asd.h5'):
-      os.remove(R'/kaggle/working/iqoptionapi/Tensorflow-IQ-option-trading/Tensorflow-IQ-option-trading/savemodel/asd.h5')
+      model1.save(R'/kaggle/working/iqoptionapi/Tensorflow-IQ-option-trading/Tensorflow-IQ-option-trading/savemodel/asd1.h5')
+    elif score[1] < 0.6 and score1[1] < 0.6 and os.path.exists(R'/kaggle/working/iqoptionapi/Tensorflow-IQ-option-trading/Tensorflow-IQ-option-trading/savemodel/asd1.h5'):
+      os.remove(R'/kaggle/working/iqoptionapi/Tensorflow-IQ-option-trading/Tensorflow-IQ-option-trading/savemodel/asd1.h5')
     i = i + 1
     print('round = ',i)
 
